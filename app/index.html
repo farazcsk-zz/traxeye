@@ -1,0 +1,673 @@
+<!doctype html>
+
+
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Polymer Starter Kit" />
+    
+  <title>T R A X E Y E</title>
+  <!-- Place favicon.ico in the `app/` directory -->
+
+  <!-- Chrome for Android theme color -->
+    <meta name="theme-color" content="#33691E">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="galleria/galleria-1.4.2.min.js"></script>
+    <style>
+        .galleria{ width: 100%; height: 400px; background: #000 }
+        
+    </style>
+
+    
+   
+    
+  
+
+  <!-- Tile color for Win8 -->
+    <meta name="msapplication-TileColor" content="#33691E">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/disc.jpg">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+    <link rel="apple-touch-icon" href="images/disc.jpg">
+
+  <!-- Tile icon for Win8 (144x144) -->
+    <meta name="msapplication-TileImage" content="images/disc.jpg">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+    
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+  <span id="browser-sync-binding"></span>
+  <template is="dom-bind" id="app">
+
+    <paper-drawer-panel id="paperDrawerPanel">
+      <!-- Drawer Scroll Header Panel -->
+      <paper-scroll-header-panel drawer fixed>
+
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+            <span class="paper-font-title"><img src="images/logo.png" alt="blah" ></img></span>
+          
+        </paper-toolbar>
+
+        <!-- Drawer Content -->
+        <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
+            
+          <a data-route="home" href="/">
+              
+              <iron-icon src="images/disc.jpg"></iron-icon>
+              <span>Home</span>
+          </a>
+
+          <a data-route="gallery" href="/gallery">
+              
+
+              <iron-icon src="images/disc.jpg"></iron-icon>
+            <span>Gallery</span>
+          </a>
+            <a data-route="reviews" href="/reviews">
+               
+                <iron-icon src="images/disc.jpg"></iron-icon>
+                <span>Reviews</span>
+            </a>
+
+          <a data-route="contact" href="/contact">
+              <iron-icon src="images/disc.jpg"></iron-icon>
+            <span>Contact</span>
+          </a>
+            
+           
+            <a data-route="tech" href=/tech>
+                <iron-icon src="images/disc.jpg"></iron-icon>
+                <span>The technical stuff</span>
+            </a>
+            <a data-route="faq" href=/faq>
+                <iron-icon src="images/disc.jpg"></iron-icon>
+                <span>FAQ</span>
+            </a>
+        </paper-menu>
+      </paper-scroll-header-panel>
+
+      <!-- Main Area -->
+      <paper-scroll-header-panel main condenses keep-condensed-header>
+
+        <!-- Main Toolbar -->
+        <paper-toolbar id="mainToolbar" class="tall">
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+          <span class="flex"></span>
+
+          <!-- Toolbar icons -->
+          
+
+          <!-- Application name -->
+          <div class="middle middle-container center horizontal layout">
+            <div class="app-name">TRAXEYE</div>
+          </div>
+
+          <!-- Application sub title -->
+          <div class="bottom bottom-container center horizontal layout">
+            <div class="bottom-title paper-font-subhead">Glow in the dark marker stud.</div>
+          </div>
+
+        </paper-toolbar>
+
+        <!-- Main Content -->
+        <div class="content">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+
+            <section data-route="home">
+              <paper-material elevation="1">
+                
+                <my-greeting></my-greeting>
+                  
+
+                  <p class="paper-font-subhead">G L O W:</p>  
+                <p>Our primary aim is to ensure a safe route can be seen in instances of low or no light.</p> 
+                 <p>We WILL save lives.</p>
+                  <img src="images/disc.jpg"><paper-ripple></paper-ripple> </img> 
+                  
+                
+       
+              </paper-material>
+              <paper-material elevation="1">
+                
+                  <img src="images/front%20message.jpg"><paper-ripple></paper-ripple> </img>
+              </paper-material>
+
+            <paper-material elevation="1" class="paper-font-body2"><paper-ripple></paper-ripple>
+                  <img src="images/grant.jpg"</img>
+                  <p class="paper-font-body2">Grant taylor (TraxEyes inventor), Simon Pratt & Nick Farthing (Sustrans,), Councillor Mathew Dean (Cabinet Member for enviroment for Environment and Transport) and Dale Bostock (Southampton city council) at official opening of the Itchen Riverside Boardwalk</p>
+              </paper-material>
+              
+            <paper-material elevation="1">
+
+                <p><b>DON'T TELL US IT GLOWS. WE KNOW, IT GLOWS.</b></p>
+            </paper-material>
+
+            </section>
+
+            <section data-route="gallery">
+              <paper-material elevation="1">
+                <h2 class="paper-font-display2">See for yourself</h2>
+                <p>What we do:</p>
+                  <div class="galleria">
+                      <img src="images/cycle-path.jpg">
+                      <img src="images/canal.jpg">
+                      <img src="images/TraxEye_nightday.jpg">
+
+                  </div>
+                  <script>
+                      Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+                      Galleria.run('.galleria');
+                  </script>
+                 
+                
+              </paper-material>
+               
+
+            </section>
+          
+        
+           
+               
+              <section data-route="reviews">
+
+                  <paper-material elevation="1">
+
+                      <body unresolved>
+
+
+
+                          <section onclick="clickHandler(event)">
+                              
+                              <h4>Swansea County Council-Cycle paths</h4>
+                              <div class="logo">  <img src="images/slogo.gif" width="150" height="51"></img></div><br>
+                              
+                              <paper-button data-dialog="animated">Details</paper-button>
+                              <paper-dialog id="animated" class="colored" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+                                  <div class="logo">  <img src="images/slogo.gif"></img></div>
+                          <div class="logo">  <img src="images/s1.jpg" ></img></div> <div class="logo">  <img src="images/s2.jpg"></img></div>
+                                  
+                                  
+                                  <p>The city currently has around 50km of cycle and walking paths including two sections of the national cycle network. The unique TraxEyeTM system is being piloted by Swansea Council along a 4km section of the Clyne Valley cycleway.
+
+                                      Rob Wachowski, Swansea Council's Cycling and Walking Officer, hopes the trial will lead to the new technology being used along other parts of the cycle network in Swansea.
+
+                                      He said: "Cycling is becoming more popular as a mode of transport and also as a leisure past time. The Council's aim is to provide safe cycle networks throughout the city. The Traxeye system gives us the ability to provide a totally green and cost neutral lighting system along cycling and walking routes. It's a great idea that provides a really effective way of guiding walkers and cyclists along these paths during the darker hours."
+
+                                      After visiting the site during the recent snow Rob also said: "The Traxeyes are installed and performing well with positive feedback from some local users. I’ve been up and down a few times recently and they are glowing through an inch of snow."</p>
+                              </paper-dialog>
+                          </section>
+    
+                  </paper-material>
+                      <paper-material elevation="1">
+
+                          <body unresolved>
+
+
+
+                              <section onclick="clickHandler(event)">
+                                  <h4>Broads Authority-Waterways</h4>
+                                  <div class="logo">  <img src="images/broads_logo.jpg" width="150" height="51"></img></div><br><br> 
+                                  <paper-button data-dialog="animated1">Details</paper-button>
+                                  <paper-dialog id="animated1" class="colored" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+                                      <div class="logo">  <img src="images/broads_logo.jpg" ></img></div>
+                              <div class="logo">  <img src="images/b1.jpg" width="150" height="51"></img></div> <div class="logo">  <img src="images/b2.jpg" width="150" height="51"></img></div>
+                                      <p>Steve Birtles, Head of Waterways Strategy and Safety "We have installed them on 1 of our moorings which is not lit and adjacent to a public house, they have been installed on the capping of the mooring so as to delineate the water’s edge hopefully to inform people where the edge of the mooring is. 
+                                      
+We have chosen this particular site as a few years ago we did have the unfortunate occurrence of a drowning from this mooring as someone returned to their boat from the public house at night. The Traxeyes are great and I am surprised at the level of 'glow' the give off they clearly do the job well, we have also had feedback from our users who think it is a great idea to install these and have commented how good product is. 
+                                 
+We intend to roll out the use of traxeyes to some of the more rural locations of our mooring network as part of general safety management."</p>
+                                  </paper-dialog>
+                              </section>
+
+                              </paper-material>
+                          <paper-material elevation="1">
+
+                              <body unresolved>
+
+
+
+                                  <section onclick="clickHandler(event)">
+                                      <h4>English Heritage Trials TraxEyes-Pathways</h4>
+                                      <div class="logo">  <img src="images/englishheritage_logo.jpg" width="150" height="51"></img></div><br><br> 
+                                      <paper-button data-dialog="animateddd">Details</paper-button>
+                                      <paper-dialog id="animateddd" class="colored" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+                                          <div class="logo">  <img src="images/englishheritage_logo.jpg" width="150" height="51"></img></div>
+                                  <div class="logo">  <img src="images/e1.jpg" width="150" height="51"></img></div> 
+                                          <p>English Heritage trials glowing circles as part of commitment to ramparts safety.
+
+                                              As part of an ongoing safety programme at the Berwick-upon-Tweed Ramparts, English Heritage is trialling a series of TraxEye™ Marker Studs along the edge of The Starks section of the ramparts.
+
+                                              The 50 TraxEye™ Marker Studs are due to be installed on Friday, 12 September and will serve to highlight the edge of the pathway on the top of the ramparts at night. Over the past two decades, there have been over 30 serious injuries relating to falls from the ramparts, including four fatalities. English Heritage takes these incidents very seriously and, in consultation with Berwick Borough Council and Northumberland County Council, will be seeking to introduce measures that do not compromise the magnificent setting but do ensure that the necessary safety precautions are in place.
+
+                                              Rob Flower, English Heritage’s Head of Visitor Operations for the North East, said, “Over the past twenty years there have been four deaths related to night-time falls from the ramparts. In the face of those statistics and to try and prevent future accidents, it is vital that appropriate safety measures are put in place. We do not recommend that people walk along the ramparts in the dark but, for those that do, these markers may provide a valuable guide.”
+
+                                              Self-illuminating, they absorb light during the day and then re-emit it at night as a strong afterglow. The circles measure 5cm in diameter and are just over half a centimetre high, ensuring that they are unobtrusive in the daytime. If this trial proves to be successful, additional TraxEyes may be fitted.</p>
+                                      </paper-dialog>
+                                  </section>
+                              
+                                  </paper-material>
+                
+
+
+                  <style is="custom-style">
+                     .logo img {
+                          width: auto;
+                          height: auto;
+                      }
+                       
+                      section > paper-button {
+                          background-color: var(--google-green-300);
+                          padding: 5px;
+                      }
+
+                      section > paper-button:hover {
+                          background-color: var(--paper-light-green-200);
+                          padding: 5px;
+                      }
+
+                      paper-dialog.colored {
+                          border: 2px solid;
+                          border-color: var(--paper-green-500);
+                          background-color: var(--paper-light-green-50);
+                          color: var(--paper-green-500);
+                      }
+
+                      paper-dialog.size-position {
+                          position: fixed;
+                          top: 16px;
+                          right: 16px;
+                      }
+
+                      paper-dialog.size-position {
+                          width: 300px;
+                          height: 300px;
+                      }
+                  </style>
+
+                  </head>
+
+
+              <script>
+                  function clickHandler(e) {
+                      var button = e.target;
+                      while (!button.hasAttribute('data-dialog') && button !== document.body) {
+                          button = button.parentElement;
+                      }
+
+                      if (!button.hasAttribute('data-dialog')) {
+                          return;
+                      }
+
+                      var id = button.getAttribute('data-dialog');
+                      var dialog = document.getElementById(id);
+                      if (dialog) {
+                          dialog.open();
+                      }
+                  }
+
+              </script>
+
+          </body>
+
+
+              </section>
+           
+
+              
+              
+              
+         
+
+            
+
+            <section data-route="contact">
+              <paper-material elevation="1">
+                <h2 class="paper-font-display2">Contact</h2>
+                  <p>If you have any questions regarding our product or service, please contact us by phone or email </p>
+
+                  <p> All UK & Ireland sales enquiries or product information please Email: info@traxeyes.com or contact <br>Grant Taylor on  <a href="tel:+447812 122 825">07812 122 825</a>
+                      email <a href="mailto:grant.taylor@traxeyes.com">grant.taylor@traxeyes.com</a> </p>
+
+                  <p>  For all other sales enquiries for Europe please call:<a href="tel:+31 6 520 77 935">+31 6 520 77 935</a><p>email:</p>     <a href="mailto:info@traxeye.nl"> info@traxeye.nl</a><br>
+                or visit <a href="www.traxeye.nl">www.traxeye.nl</a></p>
+                         <address>
+                      Bart Schinkel<br>
+                      Managing Director<br>
+                      Newvisibility International BV<br>
+                      Van Pallandtstraat 6, 6881 MT Velp<br>
+                      P.O. BOX 134, 6880 AC Velp<br>
+                      The Netherlands<br><br>
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d19857.272643687695!2d-0.101599!3d51.528642!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!5e0!3m2!1sen!2ssk!4v1442321477287" width="auto" height="auto" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                       
+                </address>
+                
+              </paper-material>
+            </section>
+        <section data-route="faq">
+
+
+
+
+            <paper-material elevation="1">
+
+                <body unresolved>
+
+
+
+                    <section onclick="clickHandler(event)">
+
+                        <h4>DIN 67510 Evaluation</h4>
+
+
+                        <paper-button data-dialog="animatedf">Details</paper-button>
+                        <paper-dialog id="animatedf" class="colored" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+                            <div class="logo">  <img src="images/t1.jpg"></img></div>
+
+
+
+                        <p>The TraxEyeTM Safety Illumination System has been evaluated by the the German Institute for Standardization (Deutsches Institut für Normung e.V., or DIN) under their 67510 standard.</p>
+                        </paper-dialog>
+                    </section>
+
+            </paper-material>
+            <paper-material elevation="1">
+
+                <body unresolved>
+
+
+
+                    <section onclick="clickHandler(event)">
+                        <h4>DIN 67510 Testing and Results</h4>
+
+                        <paper-button data-dialog="animatedf1">Details</paper-button>
+                        <paper-dialog id="<animatedf></animatedf>1" class="colored" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+
+                            <p>All measurements of the TraxEyeTM Safety Illumination System were taken in total darkness. It is important to understand this distinction when trying to compare an absolute DIN measurement with the apparent luminance perceived in low ambient lighting. These differences in scientific luminance vs. practical luminance are explained below.
+
+
+                                A TraxEyeTM photo luminescent disc was given an 8 minute exposure to a xenon source. The luminance value was then measured in millicandela per square meter (mcd/m2) and recorded against a time axis measured in minutes. The DIN 67510 results for the TraxEyeTM Safety Illumination System are as follows:</p>
+                            <div class="logo">  <img src="images/graph.jpg"></img></div>
+                        <p>According to the DIN 67510 standard, a photo luminescence at or below .03 mcd/m2 is virtually undetectable to the human eye. For all intents and purposes, a photo luminescent pigment has stopped glowing at that minimal level. Extrapolation of the data suggests that the TraxEyeTM photo luminescent disc reaches 0.3 mcd/m2 at approximately 4000 minutes, or 66 hours.</p>
+
+                        </paper-dialog>
+                    </section>
+
+            </paper-material>
+            <paper-material elevation="1">
+
+                <h4>Scientific Luminance</h4>
+                <p>Scientifically speaking, the TraxEyeTM Safety Illumination System will glow for approximately 2 days and 9 hours (a total of 66 hours) after only an 8 minute exposure to natural daylight. If this photo luminescent "return on investment" is broken down into percentages, we see that the TraxEyeTM Safety Illumination System has a laboratory efficiency of approximately 50,000%</p>
+
+            </paper-material>
+            <paper-material elevation="1">
+                <h4>Practical Luminance</h4>
+                <p>Testing in a multitude of real world lighting conditions from night time to a heavily shaded tree-lined walking trail at noon, has revealed a perceived glow time less than the DIN 67510 result but still excellent. The TraxEyeTM Safety Illumination System has an actual perceived, and therefore useful, glow cycle of about 720 minutes (12 hours) after only an 8 minute exposure to natural daylight. That is a practical efficiency of around 9,000%.</p><br>
+                <p>In other words, the TraxEyeTM Safety Illumination System has stored enough energy to emit an easily perceived glow that will last throughout the night, including late evening and early mornings, after only 8 minutes in normal daylight. Therefore, any path or public area lined with the TraxEyeTM Safety Illumination System will be clearly marked during these hours of darkness and can be safely traversed as long as the TraxEyeTM Marker Studs are not removed or obstructed by debris.</p><br>
+                <p>In conclusion, both scientific lab testing and practical field testing have confirmed that the TraxEyeTM Safety Illumination System will glow brightly all night long after only 8 minutes in normal daylight. This unanimous result underscores the TraxEyeTM Safety Illumination System's popularity as the #1 "green" illumination solution on the market today.</p>
+
+
+            </paper-material>
+
+
+            <style is="custom-style">
+                .logo img {
+                    width: auto;
+                    height: auto;
+                }
+
+                section > paper-button {
+                    background-color: var(--google-green-300);
+                    padding: 5px;
+                }
+
+                section > paper-button:hover {
+                    background-color: var(--paper-light-green-200);
+                    padding: 5px;
+                }
+
+                paper-dialog.colored {
+                    border: 2px solid;
+                    border-color: var(--paper-green-500);
+                    background-color: var(--paper-light-green-50);
+                    color: var(--paper-green-500);
+                }
+
+                paper-dialog.size-position {
+                    position: fixed;
+                    top: 16px;
+                    right: 16px;
+                }
+
+                paper-dialog.size-position {
+                    width: 300px;
+                    height: 300px;
+                }
+            </style>
+
+            </head>
+
+
+<script>
+    function clickHandler(e) {
+        var button = e.target;
+        while (!button.hasAttribute('data-dialog') && button !== document.body) {
+            button = button.parentElement;
+        }
+
+        if (!button.hasAttribute('data-dialog')) {
+            return;
+        }
+
+        var id = button.getAttribute('data-dialog');
+        var dialog = document.getElementById(id);
+        if (dialog) {
+            dialog.open();
+        }
+    }
+
+</script>
+
+</body>
+
+
+</section>
+
+
+
+
+        </section>
+      <section data-route="tech">
+
+
+         
+
+          <paper-material elevation="1">
+
+              <body unresolved>
+
+
+
+                  <section onclick="clickHandler(event)">
+
+                      <h4>DIN 67510 Evaluation</h4>
+                      
+
+                  <paper-button data-dialog="animatedt">Details</paper-button>
+                  <paper-dialog id="animatedt" class="colored" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+                      <div class="logo">  <img src="images/t1.jpg"></img></div>
+          
+
+
+          <p>The TraxEyeTM Safety Illumination System has been evaluated by the the German Institute for Standardization (Deutsches Institut für Normung e.V., or DIN) under their 67510 standard.</p>
+          </paper-dialog>
+</section>
+
+</paper-material>
+<paper-material elevation="1">
+
+    <body unresolved>
+
+
+
+        <section onclick="clickHandler(event)">
+            <h4>DIN 67510 Testing and Results</h4>
+     
+        <paper-button data-dialog="animatedt1">Details</paper-button>
+        <paper-dialog id="animatedt1" class="colored" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+    
+            <p>All measurements of the TraxEyeTM Safety Illumination System were taken in total darkness. It is important to understand this distinction when trying to compare an absolute DIN measurement with the apparent luminance perceived in low ambient lighting. These differences in scientific luminance vs. practical luminance are explained below.
+
+
+                A TraxEyeTM photo luminescent disc was given an 8 minute exposure to a xenon source. The luminance value was then measured in millicandela per square meter (mcd/m2) and recorded against a time axis measured in minutes. The DIN 67510 results for the TraxEyeTM Safety Illumination System are as follows:</p>
+            <div class="logo">  <img src="images/graph.jpg"></img></div>
+            <p>According to the DIN 67510 standard, a photo luminescence at or below .03 mcd/m2 is virtually undetectable to the human eye. For all intents and purposes, a photo luminescent pigment has stopped glowing at that minimal level. Extrapolation of the data suggests that the TraxEyeTM photo luminescent disc reaches 0.3 mcd/m2 at approximately 4000 minutes, or 66 hours.</p>
+                
+</paper-dialog>
+</section>
+
+</paper-material>
+<paper-material elevation="1">
+
+    <h4>Scientific Luminance</h4>
+    <p>Scientifically speaking, the TraxEyeTM Safety Illumination System will glow for approximately 2 days and 9 hours (a total of 66 hours) after only an 8 minute exposure to natural daylight. If this photo luminescent "return on investment" is broken down into percentages, we see that the TraxEyeTM Safety Illumination System has a laboratory efficiency of approximately 50,000%</p>
+
+</paper-material>
+<paper-material elevation="1">
+    <h4>Practical Luminance</h4>
+    <p>Testing in a multitude of real world lighting conditions from night time to a heavily shaded tree-lined walking trail at noon, has revealed a perceived glow time less than the DIN 67510 result but still excellent. The TraxEyeTM Safety Illumination System has an actual perceived, and therefore useful, glow cycle of about 720 minutes (12 hours) after only an 8 minute exposure to natural daylight. That is a practical efficiency of around 9,000%.</p><br>
+    <p>In other words, the TraxEyeTM Safety Illumination System has stored enough energy to emit an easily perceived glow that will last throughout the night, including late evening and early mornings, after only 8 minutes in normal daylight. Therefore, any path or public area lined with the TraxEyeTM Safety Illumination System will be clearly marked during these hours of darkness and can be safely traversed as long as the TraxEyeTM Marker Studs are not removed or obstructed by debris.</p><br>
+    <p>In conclusion, both scientific lab testing and practical field testing have confirmed that the TraxEyeTM Safety Illumination System will glow brightly all night long after only 8 minutes in normal daylight. This unanimous result underscores the TraxEyeTM Safety Illumination System's popularity as the #1 "green" illumination solution on the market today.</p>
+    
+    
+</paper-material>
+
+
+<style is="custom-style">
+    .logo img {
+        width: auto;
+        height: auto;
+    }
+
+    section > paper-button {
+        background-color: var(--google-green-300);
+        padding: 5px;
+    }
+
+    section > paper-button:hover {
+        background-color: var(--paper-light-green-200);
+        padding: 5px;
+    }
+
+    paper-dialog.colored {
+        border: 2px solid;
+        border-color: var(--paper-green-500);
+        background-color: var(--paper-light-green-50);
+        color: var(--paper-green-500);
+    }
+
+    paper-dialog.size-position {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+    }
+
+    paper-dialog.size-position {
+        width: 300px;
+        height: 300px;
+    }
+</style>
+
+</head>
+
+
+<script>
+    function clickHandler(e) {
+        var button = e.target;
+        while (!button.hasAttribute('data-dialog') && button !== document.body) {
+            button = button.parentElement;
+        }
+
+        if (!button.hasAttribute('data-dialog')) {
+            return;
+        }
+
+        var id = button.getAttribute('data-dialog');
+        var dialog = document.getElementById(id);
+        if (dialog) {
+            dialog.open();
+        }
+    }
+
+</script>
+
+</body>
+
+
+</section>
+
+
+
+      </section>
+            
+
+
+          </iron-pages>
+        </div>
+      </paper-scroll-header-panel>
+    </paper-drawer-panel>
+
+    
+    <paper-toast id="caching-complete"
+                 duration="6000"
+                 text="Caching complete! This app will work offline.">
+    </paper-toast>
+
+    <platinum-sw-register auto-register
+                          clients-claim
+                          skip-waiting
+                          on-service-worker-installed="displayInstalledToast">
+      <platinum-sw-cache default-cache-strategy="networkFirst"
+                        precache='[]'
+                         precache-file="precache.json">
+      </platinum-sw-cache>
+    </platinum-sw-register>
+
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+
+    
+
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
+</html>
